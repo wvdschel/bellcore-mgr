@@ -236,7 +236,7 @@ SET(mgrlogin_HEADERS
 ADD_EXECUTABLE(mgrlogin
                ${mgrlogin_SOURCES}
                ${mgrlogin_HEADERS})
-TARGET_LINK_LIBRARIES(mgrlogin bitblit)
+TARGET_LINK_LIBRARIES(mgrlogin bitblit crypt)
 TARGET_COMPILE_DEFINITIONS(mgrlogin PRIVATE
                            -DMGRLOGIN
                            -DMGR_BINARY="fix-me")

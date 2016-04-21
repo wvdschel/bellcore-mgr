@@ -12,11 +12,13 @@ Michael
 */
 /*}}}  */
 /*{{{  #includes*/
+#define _BSD_SOURCE        // For fchown, gethostname in unistd.h, and initgroups in grp.h
+#define _XOPEN_SOURCE 500  // For crypt in unistd.h
 #include <termios.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 #include <limits.h>
 #include <getopt.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
 #include <grp.h>

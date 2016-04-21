@@ -32,6 +32,7 @@
 #define MAXLINE 512
 #define MAXFIELDS 100
 /*}}}  */
+#define MAYBE_UNUSED(i) ((i)=(i))
 
 /*{{{  variables*/
 static int newx = -1, newy = -1, newdx, newdy, newfont, newflags;
@@ -85,6 +86,7 @@ dowindow(int x, int y, int dx, int dy, int font, char *shell[], int flags, char 
 {
   struct font *fp = Get_font(font);
   int i, mouse_was_on;
+  MAYBE_UNUSED(i);
 
   dbgprintf('S', (stderr, "starting shell %s\r\n", shell ? *shell : "???"));
   if (dx <= 0)
@@ -121,7 +123,7 @@ dowindow(int x, int y, int dx, int dy, int font, char *shell[], int flags, char 
   if (*init)
     put_window(active, init, strlen(init));
   if (*start) {
-    i = Write(ACTIVE(to_fd), start, strlen(start));
+    int Write(ACTIVE(to_fd), start, strlen(start));
     dbgprintf('S', (stderr, "%s: start string %d/%d %s\r\n",
                        ACTIVE(tty), i, strlen(start), start));
   }

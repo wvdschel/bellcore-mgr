@@ -57,11 +57,11 @@ event_args(
 static char *
 get_id(WINDOW *win)
 {
-  int sub = W(num);  /* subwindow number */
-  int main = W(pid); /* main window id */
+  int subw = W(num);  /* subwindow number */
+  int mainw = W(pid); /* main window id */
   static char buff[6];
 
-  sprintf(buff, "%d.%d", main, sub);
+  sprintf(buff, "%d.%d", mainw, subw);
   return (buff);
 }
 /*}}}  */
